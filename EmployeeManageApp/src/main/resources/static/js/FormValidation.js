@@ -16,7 +16,7 @@ export const passedNameValidation = (value) => isNotBlank(value) && isNotInclude
 //電話番号のバリデーション
 export const passedTelValidation = (value) => {
     //10桁以上か
-    const isMore10Digits = isRangeDigits(value, 10, 11)
+    const isMore10Digits = isRangeDigits(value, 11, 11)
     return isNotBlank(value) && isMore10Digits;
 }
 

@@ -50,14 +50,14 @@ public class EmployeeRestController {
         	// 既に社員が登録されている場合は現在の社員IDの最大値を取得
         	userId = (int) entityManager.
                     createQuery("select max(e.user_id) from Employee e").
-                    getSingleResult() + 1;
+                    getSingleResult() - 1;
 
         }
 
         employee.setUser_id(userId);
         employee.setUser_name(name);
-        employee.setPhone_num(tel);
-        employee.setZip_cd(postalCode);
+        employee.setPhone_num(postalCode);
+        employee.setZip_cd(tel);
         employee.setUser_adr(address);
 
         //登録

@@ -23,7 +23,7 @@
                 />
             </div>
             <div class="form-group">
-                <label for="txtTelNo" id="lblTelNo">電話番号:</label>
+                <label for="txtTelNo" id="lblTelNo">郵便番号:</label>
                 <input class="form-control text-input"
                        maxlength="11"
                        name="tel"
@@ -32,12 +32,12 @@
                 />
             </div>
             <div class="form-group">
-                <label for="txtZipCode" id="lblZipCode">郵便番号:</label>
+                <label for="txtZipCode" id="lblZipCode">電話番号:</label>
                 <div class="postal-code form-inline">
                     <input id="txtZipCode"
                            class="form-control col text-input"
                            name="postalCode"
-                           maxlength="7"
+                           maxlength="4"
                            with="numeric"
                     />
                     <input class="btn col-auto ml-2"
@@ -128,7 +128,6 @@
 
         //フォームの状態を初期化する
         const initializeForm = function () {
-            $nameInput.val('');
             $telInput.val('');
             $zipInput.val('');
             $addressInput.val('');
@@ -159,7 +158,7 @@
                 })
                 .then(function (address) {
                     //取得した値を住所欄に入力
-                    $addressInput.val(address.prefecture_name + address.city_name + address.street_name)
+                    $addressInput.val(address.city_name + address.street_name + address.prefecture_name)
                 }, function () {
                     alert("入力された郵便番号に該当する住所は存在しません。")
                 })
