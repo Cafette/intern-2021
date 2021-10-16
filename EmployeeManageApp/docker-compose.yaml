@@ -1,0 +1,11 @@
+version: '3'
+services:
+  postgres:
+    build: src/main/java/com/example/demo
+    image: library/postgres:11-alpine
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_DB: practice
+      POSTGRES_PASSWORD: admin
